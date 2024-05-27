@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import tmdb from './api/tmdb';
+import SearchBar from './components/SearchBar/SearchBar';
+import MovieList from './components/MovieList/MovieList';
 
-function App() {
+const App = () => {
+  const [movies, setMovies] = useState([]);
+
+  const searchMovies = async (query) => {
+    try {
+      const response = await tmdb.get('/search/movie', {
+        params: {
+          query: query,
+        },
+      });
+      setMovies(response.data.results);
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Movie Database</h1>
+      <SearchBar onSearch={searchMovies} />
+      <MovieList movies={movies} />
     </div>
   );
-}
+};
 
 export default App;
