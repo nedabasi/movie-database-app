@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import tmdb from './api/tmdb';
 import SearchBar from './components/SearchBar/SearchBar';
 import MovieList from './components/MovieList/MovieList';
+import HomeScreen from './components/HomeScreen/HomeScreen';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -21,9 +22,9 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Movie Database</h1>
-      <SearchBar onSearch={searchMovies} />
-      <MovieList movies={movies} />
+      <HomeScreen/> 
+      {/* <SearchBar onSearch={searchMovies} /> */}
+      {/* <MovieList movies={movies} /> */}
     </div>
   );
 };
