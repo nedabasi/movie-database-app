@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import MovieList from './components/MovieList/MovieList';
 import HomeScreen from './components/HomeScreen/HomeScreen';
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -23,9 +24,12 @@ const App = () => {
 
   return (
     <div className="app">
-      <HomeScreen/> 
-      {/* <SearchBar onSearch={searchMovies} /> */}
-      {/* <MovieList movies={movies} /> */}
+
+      <Router>
+        <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        </Routes>
+    </Router>
     </div>
   );
 };
