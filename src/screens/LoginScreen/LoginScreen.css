@@ -1,0 +1,91 @@
+.loginScreen {
+  position: relative;
+  height: 100%;
+  background: url('../../img/logBack.jpg') center no-repeat;
+  background-size: cover;
+}
+.loginScreen_background {
+}
+.loginScreen_logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  object-fit: contain;
+  padding-left: 20px;
+}
+.loginScreen_button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #f8b319;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.logScreen_gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+.logScreen_body {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  padding: 20px;
+  width: 80%;
+}
+.loginScreen h1 {
+  font-size: 3.125rem;
+  margin-bottom: 20px;
+}
+.loginScreen h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.loginScreen h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.loginScreen_input {
+  margin: 20px;
+}
+
+.loginScreen_input > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginScreen_input > form > input {
+  height: 40px;
+  width: 30%;
+  padding: 10px;
+  outline-width: 0;
+  max-width: 600px;
+  border: none;
+}
+
+.loginScreen_getStarted {
+  font-size: 1rem;
+  padding: 10px 20px;
+  font-weight: 600;
+  background-color: #f8b319;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  height: 60px;
+}
