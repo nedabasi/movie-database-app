@@ -22,8 +22,8 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
         {movies.map(
           (movie) =>
             //prevent dead Link by following two conditions
-            (isLargeRow && movie.poster_path) ||
-            (!isLargeRow && movie.backdrop_path && (
+            ((isLargeRow && movie.poster_path) ||
+              (!isLargeRow && movie.backdrop_path)) && (
               <img
                 className={`row_poster ${isLargeRow && 'row_posterLarge'}`}
                 key={movie.id}
@@ -32,7 +32,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                 }`}
                 alt={movie.name}
               />
-            ))
+            )
         )}
       </div>
     </div>
