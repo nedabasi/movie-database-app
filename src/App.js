@@ -7,9 +7,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './redux/userSlice';
 
 const App = () => {
-  const user = null;
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
   const [movies, setMovies] = useState([]);
   const searchMovies = async (query) => {
     try {
@@ -26,10 +30,9 @@ const App = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        //logged in
-        console.log(userAuth);
+        dispatch(login({ uid: userAuth.uid, email: userAuth.email }));
       } else {
-        //logged out
+        dispatch(logout);
       }
     });
     return unsubscribe;
