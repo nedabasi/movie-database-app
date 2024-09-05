@@ -22,6 +22,7 @@
 }
 .profileScreen-info > img {
   width: 100px;
+  height: fit-content;
 }
 .profileScreen-details {
   margin-left: 25px;
