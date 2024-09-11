@@ -24,14 +24,25 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
             //prevent dead Link by following two conditions
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
-              <img
-                className={`row_poster ${isLargeRow && 'row_posterLarge'}`}
-                key={movie.id}
-                src={`${base_url}${
-                  isLargeRow ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt={movie.name}
-              />
+              <div
+                className={`row_posterP ${isLargeRow && 'row_posterLarge'}`}
+                style={{
+                  backgroundImage: `url(${base_url}${
+                    isLargeRow ? movie.poster_path : movie.backdrop_path
+                  })`,
+                  backgroundSize: '100% 100%',
+                  backgroundPosition: 'center',
+                  height: isLargeRow ? '400px' : '150px',
+                  borderRadius: '10px'
+                }}
+              >
+                {isLargeRow && (
+                  <div className="movie_buttons">
+                    <button className="watchlist_button">+</button>
+                    <button className="more_info_button">More info</button>
+                  </div>
+                )}
+              </div>
             )
         )}
       </div>

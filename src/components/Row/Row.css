@@ -1,31 +1,72 @@
-.row{
-    color: white;
-    margin-left: 20px;
+.row {
+  color: white;
+  margin-left: 20px;
 }
-.row_posters{
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 20px;
+.row_posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
 }
-.row_posters::-webkit-scrollbar{
-    display: none;
+.row_posters::-webkit-scrollbar {
+  display: none;
 }
-.row_poster{
-  max-height: 100px;
+.row_poster:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+.row_posterLarge {
+  max-height: 250px;
+}
+.row_posterLarge:hover {
+  transform: scale(1.09);
+  opacity: 1;
+}
+.row_posterP {
+  max-height: 330px;
   object-fit: contain;
-  margin-right: 10px;
-  width: 100%;
+  margin-right: 15px;
   transition: transform 450ms;
+  min-width: 15%;
+  position: relative;
+  opacity: 0.8;
 }
-.row_poster:hover{
-    transform: scale(1.08);
-    opacity: 1;
+.movie_buttons {
+  display: flex;
+  justify-content: space-between;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  width: 90%;
+  position: absolute;
+  z-index: 2;
 }
-.row_posterLarge{
-    max-height: 250px;
+.watchlist_button,
+.more_info_button {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
 }
-.row_posterLarge:hover{
-    transform: scale(1.09);
-    opacity: 1;
+.watchlist_button {
+  background-color: #333;
+  color: white;
+  width: 50px;
+  font-size: x-large;
+  opacity: 0.6;
+}
+.more_info_button {
+  background-color: #f8b319;
+  color: black;
+  flex-grow: 1;
+  margin-left: 5px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+.watchlist_button:hover,
+.more_info_button:hover {
+  opacity: 1;
 }
