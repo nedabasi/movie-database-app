@@ -32,7 +32,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                   })`,
                   backgroundSize: '100% 100%',
                   backgroundPosition: 'center',
-                  height: isLargeRow ? '400px' : '150px',
+                  height: isLargeRow ? '300px' : '150px',
                   borderRadius: '10px'
                 }}
               >

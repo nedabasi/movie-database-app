@@ -34,6 +34,7 @@
   padding: 15px;
   font-size: 15px;
   padding-left: 20px;
+  border-radius: 10px;
 }
 .profileScreen-plans {
   margin-top: 20px;
@@ -44,11 +45,13 @@
 }
 .profileScreen-signOut {
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
   margin-top: 5%;
   width: 100%;
-  color: #fff;
+  color: black;
   background-color: #f8b319;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }

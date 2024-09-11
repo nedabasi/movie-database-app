@@ -25,9 +25,9 @@
 .row_posterP {
   max-height: 330px;
   object-fit: contain;
-  margin-right: 15px;
+  margin-right: 20px;
   transition: transform 450ms;
-  min-width: 15%;
+  min-width: 200px;
   position: relative;
   opacity: 0.8;
 }
@@ -38,6 +38,7 @@
   left: 10px;
   right: 10px;
   width: 90%;
+  height: 45px;
   position: absolute;
   z-index: 2;
 }
@@ -46,7 +47,7 @@
   border: none;
   padding: 10px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 10px;
   transition: background-color 0.3s ease;
   z-index: 2;
