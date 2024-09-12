@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Demo
+
+[View the live project here](https://movie-database-bff64.web.app)
+
 ## Available Scripts
 
 In the project directory, you can run:
