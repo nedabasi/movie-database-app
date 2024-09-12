@@ -18,6 +18,7 @@ import { onSnapshot } from 'firebase/firestore';
 function PlanScreen() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [loadingProductId, setLoadingProductId] = useState(null);
   const user = useSelector(selectUser);
   const [subscription, setSubscription] = useState(null);
 
@@ -93,7 +94,8 @@ function PlanScreen() {
     fetchProducts();
   }, []);
 
-  const loadCheckout = async (priceId) => {
+  const loadCheckout = async (priceId, productId) => {
+    setLoadingProductId(productId);
     const checkoutSessionsRef = collection(
       db,
       'customers',
@@ -110,6 +112,7 @@ function PlanScreen() {
       console.log('snap:', snap);
       if (error) {
         alert(`Error: ${error.message}`);
+        setLoadingProductId(null);
       }
       if (sessionId) {
         // we have a session, lets redirect to checkout
@@ -156,11 +159,16 @@ function PlanScreen() {
             </div>
             <button
               onClick={() =>
-                !isCurrentPackage && loadCheckout(productData.priceId)
+                !isCurrentPackage &&
+                loadCheckout(productData.priceId, productId)
               }
               className="planScreen-button"
             >
-              {isCurrentPackage ? 'Current Package' : 'Subscribe'}
+              {loadingProductId === productId
+                ? 'Please wait...'
+                : isCurrentPackage
+                ? 'Current Package'
+                : 'Subscribe'}
             </button>
           </div>
         );
