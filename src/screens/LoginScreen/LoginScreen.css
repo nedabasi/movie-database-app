@@ -20,6 +20,7 @@
   padding: 10px 20px;
   font-size: 1rem;
   background-color: #f8b319;
+  border-radius: 5px;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -77,14 +78,18 @@
   outline-width: 0;
   max-width: 600px;
   border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .loginScreen_getStarted {
   font-size: 1rem;
   padding: 10px 20px;
-  font-weight: 600;
+  font-weight: 800;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: #f8b319;
-  color: #fff;
+  color: black;
   cursor: pointer;
   border: none;
   height: 60px;

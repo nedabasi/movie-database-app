@@ -33,7 +33,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
                   backgroundSize: '100% 100%',
                   backgroundPosition: 'center',
                   height: isLargeRow ? '300px' : '150px',
-                  borderRadius: '10px'
+                  borderRadius: '5px'
                 }}
               >
                 {isLargeRow && (
