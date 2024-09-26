@@ -1,10 +1,12 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyAReBcM4NFFB75Cvn8o0-56Q5TCoMeZQZk",
-    authDomain: "movie-database-bff64.firebaseapp.com",
-    projectId: "movie-database-bff64",
-    storageBucket: "movie-database-bff64.appspot.com",
-    messagingSenderId: "689021390450",
-    appId: "1:689021390450:web:4e00601426c485cd293ceb",
-    measurementId: "G-4QXPX6TQWR"
-  };
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+}
+
+export default firebaseConfig
